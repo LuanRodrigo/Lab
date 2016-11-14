@@ -4,24 +4,35 @@ using namespace std;
 
 int main()
 {
-    int memoria,n, soma, maior=0,menor=0;
-
-            cout << " Digite o tamanho do lote:";
-            cin >> n;
+    float num[50],maior,menor,media=0,soma=0;
 
 
-        for(int i = 0; i<n;i++){
-            cout << " Digite a capacidade de memoria do computador: ";
-            cin >> memoria;
+        for(int i = 0; i<50;i++){
+            cout << " Digite um numero:";
+            cin >> num[i];
+        }
 
-            if(memoria>maior){
-                maior = memoria;
-            }
-            if(memoria < menor){
-                menor = memoria;
+
+        maior = num[0];
+        menor = num[0];
+
+        for(int i = 0; i<50;i++){
+            soma = soma + num[i];
+        }
+
+        media = soma /50;
+
+        for(int i = 0; i<50;i++){
+            if( num[i] > maior){
+                maior = num[i];
             }
         }
-            cout << " Maior Memoria verificada: " << maior;
-            cout << "\n Menor memoria verificada: " << menor;
+        for(int i = 0; i<50;i++){
+            if( num[i] < menor){
+                menor = num[i];
+            }
+        }
+
+
     return 0;
 }
