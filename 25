@@ -1,0 +1,65 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] num = new int[10];
+            int maior, menor, media, soma = 0, posmaior, posmenor;
+
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Digite um numero:");
+                num[i] = Convert.ToInt32(Console.ReadLine());
+                soma = soma + num[i];
+            }
+            maior = num[0];
+            menor = num[0];
+            media = soma / 10;
+
+            for(int i = 0; i < 10; i++)
+            {
+                if (num[i] > maior)
+                {
+                    maior = num[i];
+                    posmaior = i;
+                }
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                if (num[i] < menor)
+                {
+                    menor = num[i];
+                    posmenor = i;
+                }
+            }
+            Console.WriteLine("Maior: " + maior);
+            Console.WriteLine("Menor: " + menor);
+            for(int i = 0; i < 10; i++)
+            {
+                if(num[i] > media)
+                {
+                    Console.WriteLine("Acima da media: " + num[i]);
+                }
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                if (num[i] < media)
+                {
+                    Console.WriteLine("Abaixo da media: " + num[i]);
+                }
+            }
+
+            Console.WriteLine ();
+
+            Console.ReadKey();
+        }
+    }
+}
